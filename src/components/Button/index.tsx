@@ -6,7 +6,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 interface ButtonProps {
     title: string;
     icon?: IconProp;
-    onClick: React.MouseEventHandler<HTMLButtonElement>;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 const Button: React.FC<ButtonProps> = ({title,icon,onClick}: ButtonProps) => {
 

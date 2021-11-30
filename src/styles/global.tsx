@@ -23,7 +23,7 @@ export default createGlobalStyle`
     width: 100%;
     height: 50px;
     padding: 14px 16px 0 10px;
-    outline: 0;
+    outline: none;
     border: 0;
     background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.subTilte};
@@ -34,4 +34,13 @@ export default createGlobalStyle`
     text-transform: capitalize;
     padding: 0 50px;
 }
+
+  ::-webkit-input-placeholder {
+    color: ${props => props.theme.colors.subTilte};
+}
+/* Firefox 19+ */
+  ::-moz-placeholder {
+    color: ${props => props.theme.colors.subTilte};
+}
+
 `
