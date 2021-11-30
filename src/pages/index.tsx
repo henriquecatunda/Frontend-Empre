@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useState} from 'react';
 import Head from 'next/head'
+import Home from '../pages/Home/index'
 
-const Home: React.FC = () => {
+const App: React.FC = () => {
+
   return (
     <>
       <Head>
@@ -9,10 +11,10 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-       <h1>henrique</h1>
+          <Home/>
       </main>
     </>
   )
 }
 
-export default Home
+export default App
