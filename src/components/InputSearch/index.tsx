@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Title,Box } from "./styles"
+import { Container, Box, Title } from "./styles"
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -13,15 +13,15 @@ const Card: React.FC<ButtonProps> = ({title, onChange, value, onClick}: ButtonPr
 
     return (    
         <Container>
-            <Title >
-                <button onClick={onClick}><Box><FontAwesomeIcon icon={faSearch}/> </Box> </button>
-            </Title>
-                <input
-               
+            <Box>
+                <button onClick={onClick}><Title><FontAwesomeIcon icon={faSearch}/> </Title> </button>
+            </Box>
+
+            <input
                 placeholder={title}
                 onChange={onChange}
                 value={value}
-                />
+            />
         </Container>
     );
 };
