@@ -6,16 +6,14 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-interface ButtonProps {
+interface CardProps {
   title: string;
   tagLancamento: string;
   tagResidencial: string;
   subTile: string;
   onClickExcluir: React.MouseEventHandler<HTMLButtonElement>;
-  onClickEditar: React.MouseEventHandler<HTMLButtonElement>;
-
 }
-const Card: React.FC<ButtonProps> = ({ title, tagLancamento, tagResidencial, subTile, onClickExcluir, onClickEditar }: ButtonProps) => {
+const Card: React.FC<CardProps> = ({ title, tagLancamento, tagResidencial, subTile, onClickExcluir }: CardProps) => {
 
   return (
     <ContainerCard>
@@ -23,7 +21,7 @@ const Card: React.FC<ButtonProps> = ({ title, tagLancamento, tagResidencial, sub
         <Box>
           <Title>{title} </Title>
           <Link href={'/Editar'} >
-            <button onClick={onClickEditar}> <FontAwesomeIcon icon={faEdit} /> </button>
+            <button > <FontAwesomeIcon icon={faEdit} /> </button>
           </Link>
 
             <button onClick={onClickExcluir}><FontAwesomeIcon icon={faTrash} /> </button>
