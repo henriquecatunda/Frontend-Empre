@@ -33,14 +33,14 @@ export default createGlobalStyle`
     font-size: 16px;
     text-transform: capitalize;
     padding: 0 50px;
-}
+    }
 
-  ::-webkit-input-placeholder {
-    color: ${props => props.theme.colors.subTilte};
-}
-/* Firefox 19+ */
-  ::-moz-placeholder {
-    color: ${props => props.theme.colors.subTilte};
-}
+    ::-webkit-input-placeholder {
+      color: ${props => props.theme.colors.subTilte};
+    }
+    /* Firefox 19+ */
+    ::-moz-placeholder {
+      color: ${props => props.theme.colors.subTilte};
+    }
 
 `

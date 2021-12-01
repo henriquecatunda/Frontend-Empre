@@ -1,22 +1,44 @@
 import React from 'react';
-import { Container, Title } from "./styles"
+import { Container, Title, Box } from "./styles"
 import Button from "../Button"
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretLeft } from '@fortawesome/free-solid-svg-icons'
+import { useRouter } from 'next/router'
+
 interface ButtonProps {
     titleMenu: string;
     title?: string;
     icon?: IconProp;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
-const Card: React.FC<ButtonProps> = ({titleMenu,title, icon, onClick}: ButtonProps) => {
+const Card: React.FC<ButtonProps> = ({ titleMenu, title, icon, onClick }: ButtonProps) => {
 
-    return (    
+    const router = useRouter()
+
+    return (
         <Container>
-            <Title>
-                {titleMenu}
-            </Title>
 
-            <Button title={title} onClick={onClick} icon={icon} />
+            {router.pathname !== '/' ? (
+                <Link href={'/'} >
+                    <Title style={{cursor:'pointer'}}>
+                        <Box><FontAwesomeIcon icon={faCaretLeft} /></Box>
+                        {titleMenu}
+                    </Title>
+                </Link>
+            ) : (
+                <Title>
+                        {titleMenu}
+                </Title>
+            )}
+
+
+            {router.pathname === '/' ? (
+                <Link href={'/Cadastro'}>
+                    <Button title={title} onClick={onClick} icon={icon} />
+                </Link>
+            ) : ('')}
         </Container>
     );
 };

@@ -60,8 +60,12 @@ export const BoxTag = styled.div`
     align-items: center;
 
     @media (max-width: 425px){
-       width: 105%;
-       margin-top: 20px;
+    width: 100%;
+    height: 70px;
+    margin-top: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     }
 `;
 

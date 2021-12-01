@@ -32,3 +32,8 @@ export const Title = styled.div`
        font-size: 14px;
     }
 `;
+
+export const Box = styled.div`
+    
+    margin-right: 24px;
+`;
