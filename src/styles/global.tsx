@@ -17,6 +17,7 @@ export default createGlobalStyle`
       border: 0;
       color: ${props => props.theme.colors.tilte};
       cursor: pointer;
+      background-color: white;
   }
 
   input {
