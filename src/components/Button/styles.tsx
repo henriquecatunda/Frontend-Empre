@@ -24,5 +24,6 @@ export const Title = styled.div`
     font-size: 16px;
     color:  ${props => props.theme.colors.primary}; 
     margin-right: 8px;
+    margin-left: 8px;
     text-transform: capitalize;
 `;

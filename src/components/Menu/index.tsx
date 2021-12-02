@@ -1,16 +1,14 @@
 import React from 'react';
 import { Container, Title, Box } from "./styles"
 import Button from "../Button"
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretLeft } from '@fortawesome/free-solid-svg-icons'
 import { useRouter } from 'next/router'
+import seta from '../../assets/seta.jpg'
 
 interface ButtonProps {
     titleMenu: string;
     title?: string;
-    icon?: IconProp;
+    icon?: string;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 const Card: React.FC<ButtonProps> = ({ titleMenu, title, icon, onClick }: ButtonProps) => {
@@ -23,7 +21,7 @@ const Card: React.FC<ButtonProps> = ({ titleMenu, title, icon, onClick }: Button
             {router.pathname !== '/' ? (
                 <Link href={'/'} >
                     <Title style={{cursor:'pointer'}}>
-                        <Box><FontAwesomeIcon icon={faCaretLeft} /></Box>
+                        <Box><img src={seta.src} alt="Logo" /></Box>
                         {titleMenu}
                     </Title>
                 </Link>
