@@ -20,3 +20,11 @@ export const Page = styled.button`
     color: ${props => props.theme.colors.subTilte};
     padding: 4px;
 `;
+
+export const Title = styled.div`
+    color: red;
+    font-style: normal;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 5px;
+`;
