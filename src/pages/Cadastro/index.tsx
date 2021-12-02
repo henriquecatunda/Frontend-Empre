@@ -10,8 +10,14 @@ import api from '../../Api/Api'
 import axios from 'axios';
 import {Title} from '../Home/styles'
 
+interface ceps {
+  logradouro: string,
+  bairro: string,
+  localidade: string,
+  uf: string
+}
 
-const Cadastro: React.FC = () => {
+const Cadastro = (ceps) => {
 
   const router = useRouter()
 
@@ -21,7 +27,7 @@ const Cadastro: React.FC = () => {
   const [cep, setCep] = useState('');
   const [numero, setNumero] = useState('');
 
-  const [dadosCep, setDadosCep] = useState('')
+  const [dadosCep, setDadosCep] = useState(ceps)
   const [message, setMessage] = useState('');
 
   function getDados(e) {
@@ -108,7 +114,7 @@ const Cadastro: React.FC = () => {
               { value: 'Pronto pra morar', label: 'Pronto pra morar' },
             ]} />
 
-          <Input title="nome do empreendimento" value={nome} onChange={(e) => setNome(e.target.value)} />
+          <Input title="Nome do empreendimento" value={nome} onChange={(e) => setNome(e.target.value)}/>
 
           <InputSelect
             name="subject"
@@ -126,10 +132,10 @@ const Cadastro: React.FC = () => {
           </div>
 
           <TagCep>
-            <Tag>{dadosCep.logradouro}</Tag>
-            <Tag>{dadosCep.bairro}</Tag>
-            <Tag>{dadosCep.localidade}</Tag>
-            <Tag>{dadosCep.uf}</Tag>
+                <Tag>{dadosCep.logradouro}</Tag>
+                <Tag>{dadosCep.bairro}</Tag>
+                <Tag>{dadosCep.localidade}</Tag>
+                <Tag>{dadosCep.uf}</Tag>
           </TagCep>
 
 

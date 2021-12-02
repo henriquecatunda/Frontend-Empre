@@ -75,6 +75,7 @@ const Home: React.FC = () => {
 
     if (pages <= dados.length / 10) {
       setPages(pages + 1);
+      setIndexPage(() => indexPage = pages + 1)
       Allget();
     } else {
       setErro("Final da lista");
@@ -89,7 +90,7 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-        <Menu titleMenu="Empreendimentos" title="adicionar" icon={plus.src} />
+        <Menu titleMenu="Empreendimentos" title="adicionar" icon={plus} />
 
         <div onKeyPress={(e) => Pesquisar(e)} style={{ width: '100%' }}>
           <InputSearch title="pesquisar" value={nomeInput} onChange={(e) => setNomeInput(e.target.value)} onClick={Pesquisar} />

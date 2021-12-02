@@ -21,7 +21,7 @@ const Card: React.FC<ButtonProps> = ({ titleMenu, title, icon, onClick }: Button
             {router.pathname !== '/' ? (
                 <Link href={'/'} >
                     <Title style={{cursor:'pointer'}}>
-                        <Box><img src={seta.src} alt="Logo" /></Box>
+                        <Box><img src={seta} alt="Logo" /></Box>
                         {titleMenu}
                     </Title>
                 </Link>

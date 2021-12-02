@@ -10,7 +10,15 @@ import axios from 'axios';
 import { useRouter } from "next/router"
 import {Title} from '../Home/styles'
 
-const Editar: React.FC = () => {
+
+interface ceps {
+  logradouro: string,
+  bairro: string,
+  localidade: string,
+  uf: string
+}
+
+const Editar = (ceps) => {
 
   const [lanca, setLanca] = useState('');
   const [nome, setNome] = useState('');
@@ -18,7 +26,7 @@ const Editar: React.FC = () => {
   const [cep, setCep] = useState('');
   const [numero, setNumero] = useState('');
   const [dados, setDados] = useState([]);
-  const [dadosCep, setDadosCep] = useState([]);
+  const [dadosCep, setDadosCep] = useState(ceps);
   const [message, setMessage] = useState('');
 
   const router = useRouter()
@@ -32,10 +40,10 @@ const Editar: React.FC = () => {
         setDados(response.data);
         console.log(response.data);
       }).catch((error) => console.log(error))
+
+  }
       
-    }
-    
-    useEffect(() => {
+  useEffect(() => {
       Allget();
       dados.map( dado => {
         setLanca(dado.status);
@@ -45,7 +53,7 @@ const Editar: React.FC = () => {
         setCep(dado.address.cep);
         setDadosCep(dado.address)
         })
-  }, [])
+  }, [(e) => id])
 
 
   const Atualizar = (e) => {
@@ -155,4 +163,4 @@ const Editar: React.FC = () => {
   )
 }
 
-export default Editar
+export default Editar;

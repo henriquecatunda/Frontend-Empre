@@ -1,8 +1,8 @@
 import React from 'react';
 import { ContainerCard, Title, SubTile, BoxText, BoxTag, Box } from "./styles"
 import Tag from '../Tag'
-import Link from 'next/link'
-import deletes from '../../assets/delete.png'
+import Link from 'next/link';
+import Delete from '../../assets/delete.png'
 import Toedit from '../../assets/Toedit.png'
 
 interface CardProps {
@@ -24,10 +24,10 @@ const Card: React.FC<CardProps> = ({ title, tagLancamento, id, tagResidencial, s
             pathname: "/Editar",
             query: { id: `${id}` },
           }}>
-            <button > <img src={Toedit.src} alt="Logo" /> </button>
+            <button > <img src={Toedit} alt="Logo" /> </button>
           </Link>
 
-            <button onClick={onClickExcluir}> <img src={deletes.src} alt="Logo" /> </button>
+            <button onClick={onClickExcluir}> <img src={Delete} alt="Logo" /> </button>
 
         </Box>
         <SubTile> {subTile}  </SubTile>

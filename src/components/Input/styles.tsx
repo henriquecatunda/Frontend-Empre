@@ -26,6 +26,5 @@ export const InputButton = styled.input`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    text-transform: capitalize;
     font-family: 'Inter', sans-serif;
 `;

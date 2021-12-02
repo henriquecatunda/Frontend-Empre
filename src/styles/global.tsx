@@ -32,7 +32,6 @@ export default createGlobalStyle`
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-    text-transform: capitalize;
     padding: 0 50px;
     }
 

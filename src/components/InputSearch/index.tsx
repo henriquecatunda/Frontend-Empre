@@ -13,7 +13,7 @@ const Card: React.FC<ButtonProps> = ({title, onChange, value, onClick}: ButtonPr
     return (    
         <Container>
             <Box>
-                <button onClick={onClick}><Title> <img src={search.src} alt=""/> </Title> </button>
+                <button onClick={onClick}><Title> <img src={search} alt=""/> </Title> </button>
             </Box>
 
             <input

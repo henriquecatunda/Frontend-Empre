@@ -27,7 +27,6 @@ export const Title = styled.div`
     display: flex;
     align-items: center;
     color: ${props => props.theme.colors.subTilte};
-    text-transform: capitalize;
     margin-right: 18px;
 `;
 
