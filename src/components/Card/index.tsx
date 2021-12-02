@@ -2,29 +2,32 @@ import React from 'react';
 import { ContainerCard, Title, SubTile, BoxText, BoxTag, Box } from "./styles"
 import Tag from '../Tag'
 import Link from 'next/link'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
-import { faEdit } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import deletes from '../../assets/delete.png'
+import Toedit from '../../assets/Toedit.png'
 
 interface CardProps {
   title: string;
   tagLancamento: string;
   tagResidencial: string;
+  id: string;
   subTile: string;
   onClickExcluir: React.MouseEventHandler<HTMLButtonElement>;
 }
-const Card: React.FC<CardProps> = ({ title, tagLancamento, tagResidencial, subTile, onClickExcluir }: CardProps) => {
+const Card: React.FC<CardProps> = ({ title, tagLancamento, id, tagResidencial, subTile, onClickExcluir }: CardProps) => {
 
   return (
     <ContainerCard>
       <BoxText>
         <Box>
           <Title>{title} </Title>
-          <Link href={'/Editar'} >
-            <button > <FontAwesomeIcon icon={faEdit} /> </button>
+          <Link href={{
+            pathname: "/Editar",
+            query: { id: `${id}` },
+          }}>
+            <button > <img src={Toedit.src} alt="Logo" /> </button>
           </Link>
 
-            <button onClick={onClickExcluir}><FontAwesomeIcon icon={faTrash} /> </button>
+            <button onClick={onClickExcluir}> <img src={deletes.src} alt="Logo" /> </button>
 
         </Box>
         <SubTile> {subTile}  </SubTile>

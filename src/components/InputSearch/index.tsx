@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Box, Title } from "./styles"
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import search from '../../assets/search.png'
 
 interface ButtonProps {
     title: string;
@@ -14,7 +13,7 @@ const Card: React.FC<ButtonProps> = ({title, onChange, value, onClick}: ButtonPr
     return (    
         <Container>
             <Box>
-                <button onClick={onClick}><Title><FontAwesomeIcon icon={faSearch}/> </Title> </button>
+                <button onClick={onClick}><Title> <img src={search.src} alt=""/> </Title> </button>
             </Box>
 
             <input
